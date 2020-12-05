@@ -1,9 +1,24 @@
-import { dataApi, Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
+import {
+  dataApi,
+  Field,
+  Placeholder,
+  VisitorIdentification,
+  RouteData,
+} from "@sitecore-jss/sitecore-jss-react";
 import axios from "axios";
 import { NextSeo } from "next-seo";
-import { VisitorIdentification } from "@sitecore-jss/sitecore-jss-react";
 
-export default function Home(props) {
+interface HomeProps {
+  sitecore: {
+    route: Omit<RouteData, "fields"> & {
+      fields: {
+        pageTitle: Field<string>;
+      };
+    };
+  };
+}
+
+export default function Home(props: HomeProps) {
   return (
     <>
       <NextSeo title={props.sitecore.route.fields.pageTitle.value} />
@@ -17,16 +32,16 @@ export default function Home(props) {
   );
 }
 
-function dataFetcher(url, data) {
+const dataFetcher = (url: string) => {
   const prefix =
     process.env.NODE_ENV === "development" ? "http://localhost:3000" : "";
 
   return axios.get(`${prefix}${url}`, {
     withCredentials: true,
   });
-}
+};
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const { sitecore } = await dataApi.fetchRouteData("/", {
     fetcher: dataFetcher,
   });
