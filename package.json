@@ -10,7 +10,6 @@
   "dependencies": {
     "@sitecore-jss/sitecore-jss-react": "^15.0.1",
     "axios": "^0.21.0",
-    "msw": "^0.24.1",
     "next": "10.0.3",
     "next-seo": "^4.17.0",
     "qs": "^6.9.4",
