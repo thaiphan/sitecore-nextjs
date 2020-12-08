@@ -21,9 +21,13 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
 
       <VisitorIdentification />
 
+      <Placeholder name="header" rendering={props.route} />
+
       <div className="container">
-        <Placeholder name="jss-main" rendering={props.route} />
+        <Placeholder name="main" rendering={props.route} />
       </div>
+
+      <Placeholder name="footer" rendering={props.route} />
     </>
   );
 };
