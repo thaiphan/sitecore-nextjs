@@ -8,7 +8,8 @@ export const getRouteData = async (itemPath: string) => {
       serviceUrl: `${process.env.SITECORE_HOST}/sitecore/api/layout/render/jss`,
     },
     querystringParams: {
-      sc_apikey: process.env.SITECORE_API_KEY
-    }
+      sc_apikey: process.env.SITECORE_API_KEY,
+      sc_site: process.env.SITECORE_SITE,
+    },
   });
 };

@@ -9,7 +9,7 @@ import { NextSeo } from "next-seo";
 interface DefaultLayoutProps {
   route: Omit<RouteData, "fields"> & {
     fields: {
-      pageTitle: Field<string>;
+      pageTitle?: Field<string>;
     };
   };
 }
@@ -17,17 +17,13 @@ interface DefaultLayoutProps {
 export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
   return (
     <>
-      <NextSeo title={props.route.fields.pageTitle.value} />
+      <NextSeo title={props.route.fields.pageTitle?.value} />
 
       <VisitorIdentification />
 
-      <Placeholder name="header" rendering={props.route} />
-
-      <div className="container">
-        <Placeholder name="main" rendering={props.route} />
+      <div className="container mx-auto">
+        <Placeholder name="jss-main" rendering={props.route} />
       </div>
-
-      <Placeholder name="footer" rendering={props.route} />
     </>
   );
 };
