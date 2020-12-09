@@ -24,5 +24,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       sitecore,
     },
+    revalidate: 1,
   };
 };

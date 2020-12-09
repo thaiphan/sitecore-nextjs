@@ -35,12 +35,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
-  // TODO: Deliver some kind of 401 error to the user
-  const { sitecore } = await getRouteData("/");
-
   return {
-    props: {
-      sitecore,
-    },
+    notFound: true,
   };
 };
