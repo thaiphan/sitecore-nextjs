@@ -1,8 +1,8 @@
 import { Field, RouteData } from "@sitecore-jss/sitecore-jss-react";
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { getRouteData } from "../services/sitecore";
-import { DefaultLayout } from "../layouts/DefaultLayout";
-import { readRequestBodyAsJson } from "@sitecore-jss/sitecore-jss-rendering-host/dist/ssrMiddleware";
+import { DefaultLayout } from "../components/templates/DefaultLayout";
+
 interface HomeProps {
   sitecore: {
     route: Omit<RouteData, "fields"> & {

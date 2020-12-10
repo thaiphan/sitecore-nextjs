@@ -1,6 +1,6 @@
 import { SitecoreContext } from "@sitecore-jss/sitecore-jss-react";
 import "../styles/globals.css";
-import { ContentBlock } from "../components/ContentBlock";
+import { ContentBlock } from "../components/organisms/ContentBlock";
 import { ComponentFactory } from "@sitecore-jss/sitecore-jss-react/types/components/sharedTypes";
 
 const componentFactory: ComponentFactory = (componentName) => {

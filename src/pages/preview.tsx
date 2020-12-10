@@ -1,7 +1,6 @@
 import { Field, RouteData } from "@sitecore-jss/sitecore-jss-react";
 import { GetServerSideProps } from "next";
-import { getRouteData } from "../services/sitecore";
-import { DefaultLayout } from "../layouts/DefaultLayout";
+import { DefaultLayout } from "../components/templates/DefaultLayout";
 import { readRequestBodyAsJson } from "@sitecore-jss/sitecore-jss-rendering-host/dist/ssrMiddleware";
 
 interface PreviewProps {
