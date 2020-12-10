@@ -2,7 +2,7 @@
 
 This repo showcases a possible way of integrating Next.js with Sitecore. I thought the [JSS boilerplate](https://jss.sitecore.com/docs/client-frameworks/react/react-overview) was totally gross so I wanted to go for a Next.js-first approach for my solution.
 
-JSS for React comes with a concept called a "component factory". In JSS, this component factory is automatically generated for you. However, I have't set up this mechanism for my implementation yet. :disappointed: You'll have to manually map each Sitecore "placeholder" component with its equivalent Next.js React component (see [/src/pages/_app.tsx](/src/pages/_app.tsx#L7))
+JSS for React comes with a concept called a "component factory". In JSS, this component factory is automatically generated for you. However, I have't set up this mechanism for my implementation yet. :disappointed: You'll have to manually map each Sitecore "placeholder" component with its equivalent Next.js / React component (see [/src/pages/_app.tsx](/src/pages/_app.tsx#L7))
 
 ## Experience Editor
 
