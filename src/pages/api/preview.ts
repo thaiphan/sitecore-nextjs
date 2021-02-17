@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import Axios from "axios";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import Axios from 'axios';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -8,7 +8,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const previewData = JSON.parse(data);
 
     const response = await Axios.post(`${process.env.HOST}/preview`, {
-      preview: true,
       previewData,
       previewToken: process.env.PREVIEW_TOKEN,
     });

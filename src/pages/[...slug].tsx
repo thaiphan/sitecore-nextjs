@@ -1,28 +1,32 @@
-import { Field, RouteData } from '@sitecore-jss/sitecore-jss-react';
-import { GetServerSideProps } from 'next';
-import { DefaultLayout } from '../components/templates/DefaultLayout';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { getRouteData } from '../services/sitecore';
 
-interface PageProps {
-  sitecore: {
-    route: Omit<RouteData, 'fields'> & {
-      fields: {
-        pageTitle: Field<string>;
-      };
+export default function Page() {
+  return <></>;
+}
+
+export const getStaticProps: GetStaticProps<{}, { slug: string[] }> = async (
+  context
+) => {
+  try {
+    const { sitecore } = await getRouteData(context.params.slug.join('/'));
+
+    return {
+      props: {
+        sitecore,
+      },
+      revalidate: 1,
     };
-  };
-}
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
+};
 
-export default function Page(props: PageProps) {
-  return <DefaultLayout route={props.sitecore.route} />;
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { sitecore } = await getRouteData(context.resolvedUrl);
-
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    props: {
-      sitecore,
-    },
+    paths: [],
+    fallback: 'blocking',
   };
 };

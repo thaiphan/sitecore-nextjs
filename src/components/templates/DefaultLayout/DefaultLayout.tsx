@@ -1,29 +1,14 @@
-import {
-  Field,
-  Placeholder,
-  VisitorIdentification,
-  RouteData,
-} from "@sitecore-jss/sitecore-jss-react";
-import { NextSeo } from "next-seo";
+import { Placeholder, RouteData } from '@sitecore-jss/sitecore-jss-react';
+import { FC } from 'react';
 
 interface DefaultLayoutProps {
-  route: Omit<RouteData, "fields"> & {
-    fields: {
-      pageTitle?: Field<string>;
-    };
-  };
+  route: RouteData;
 }
 
-export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
+export const DefaultLayout: FC<DefaultLayoutProps> = (props) => {
   return (
-    <>
-      <NextSeo title={props.route.fields.pageTitle?.value} />
-
-      <VisitorIdentification />
-
-      <div className="container mx-auto">
-        <Placeholder name="jss-main" rendering={props.route} />
-      </div>
-    </>
+    <div className="container mx-auto">
+      <Placeholder name="jss-main" rendering={props.route} />
+    </div>
   );
 };
