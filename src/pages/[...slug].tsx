@@ -1,11 +1,11 @@
-import { Field, RouteData } from "@sitecore-jss/sitecore-jss-react";
-import { GetServerSideProps } from "next";
-import { DefaultLayout } from "../components/templates/DefaultLayout";
-import { getRouteData } from "../services/sitecore";
+import { Field, RouteData } from '@sitecore-jss/sitecore-jss-react';
+import { GetServerSideProps } from 'next';
+import { DefaultLayout } from '../components/templates/DefaultLayout';
+import { getRouteData } from '../services/sitecore';
 
 interface PageProps {
   sitecore: {
-    route: Omit<RouteData, "fields"> & {
+    route: Omit<RouteData, 'fields'> & {
       fields: {
         pageTitle: Field<string>;
       };
