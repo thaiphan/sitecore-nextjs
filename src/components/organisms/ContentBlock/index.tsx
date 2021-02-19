@@ -1,1 +1,1 @@
-export { ContentBlock } from "./ContentBlock";
+export { ContentBlock } from './ContentBlock';

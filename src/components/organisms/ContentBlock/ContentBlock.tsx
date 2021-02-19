@@ -1,4 +1,4 @@
-import { Text, RichText, Field } from "@sitecore-jss/sitecore-jss-react";
+import { Text, RichText, Field } from '@sitecore-jss/sitecore-jss-react';
 
 interface ContentBlockProps {
   fields: {
