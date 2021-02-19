@@ -5,10 +5,14 @@ import { ComponentFactory } from '@sitecore-jss/sitecore-jss-react/types/compone
 import { DefaultLayout } from '../components/templates/DefaultLayout';
 import { AppProps } from 'next/app';
 import { NextSeo } from 'next-seo';
+import { SingleColumn } from '../components/organisms/SingleColumn';
+import { GroupedContentList } from '../components/organisms/GroupedContentList';
 
 const componentFactory: ComponentFactory = (componentName) => {
   const components = new Map();
   components.set('ContentBlock', ContentBlock);
+  components.set('GroupedContentList', GroupedContentList);
+  components.set('SingleColumn', SingleColumn);
 
   return components.get(componentName);
 };
